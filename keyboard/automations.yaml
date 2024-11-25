@@ -1,0 +1,1290 @@
+- id: '1720590905507'
+  alias: suite-liga-media-by-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 1
+      type: key_down
+  condition: []
+  action:
+  - type: turn_on
+    device_id: e85de08a0ecb7fdf039057b21e7af0ec
+    entity_id: 62a8ba9ef5bf1edff09f5e66e757fc81
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - service: remote.send_command
+    target:
+      area_id: suite
+      device_id: 63b69f73c0d555bd089ec17194af6755
+      entity_id: remote.suite_rc
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: power_on
+      device: suite_tv
+  mode: single
+- id: '1720591085872'
+  alias: suite-desliga-midia-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 15
+      type: key_down
+  condition: []
+  action:
+  - type: turn_off
+    device_id: e85de08a0ecb7fdf039057b21e7af0ec
+    entity_id: 62a8ba9ef5bf1edff09f5e66e757fc81
+    domain: switch
+  mode: single
+- id: '1720664509922'
+  alias: suite-youtube-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 102
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: media_player.suite_chromecast
+      label_id: suite
+    data:
+      media_content_id: com.google.android.youtube.tv
+      media_content_type: app
+  mode: single
+- id: '1720748359963'
+  alias: suite-netflix-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 104
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: media_player.suite_chromecast
+      label_id: suite
+    data:
+      media_content_id: com.netflix.ninja
+      media_content_type: app
+  mode: single
+- id: '1720748704442'
+  alias: suite-prime-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 107
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: media_player.suite_chromecast
+      label_id: suite
+    data:
+      media_content_type: app
+      media_content_id: com.amazon.amazonvideo.livingroom
+  mode: single
+- id: '1720748775937'
+  alias: suite-rc-disneyplus
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 109
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: media_player.suite_chromecast
+      label_id: suite
+    data:
+      media_content_id: com.disney.disneyplus
+      media_content_type: app
+  mode: single
+- id: '1720749424351'
+  alias: suite-up-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 103
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: remote.suite_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_UP
+  mode: single
+- id: '1720749519498'
+  alias: suite-down-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 108
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: remote.suite_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_DOWN
+  mode: single
+- id: '1720749603418'
+  alias: suite-left-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 105
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: remote.suite_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_LEFT
+  mode: single
+- id: '1720749723511'
+  alias: suite-right-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 106
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: remote.suite_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_RIGHT
+  mode: single
+- id: '1720749993584'
+  alias: suite-ok-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 76
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: remote.suite_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_CENTER
+  mode: single
+- id: '1720750143257'
+  alias: suite-back-rc
+  description: ''
+  triggers:
+  - event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 14
+      type: key_down
+    trigger: event
+  conditions: []
+  actions:
+  - target:
+      area_id: suite
+      device_id: 63b69f73c0d555bd089ec17194af6755
+      entity_id: remote.suite_rc
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: BACK
+    action: remote.send_command
+  mode: single
+- id: '1720750236589'
+  alias: suite-home-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 110
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: remote.suite_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: HOME
+  mode: single
+- id: '1720750384363'
+  alias: suite-rc-volume-up
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 78
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: remote.suite_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      device: soundbar
+      command: volume_up
+  mode: single
+- id: '1720877236404'
+  alias: suite-ac-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 13
+      type: key_down
+  condition: []
+  action:
+  - device_id: 30880941ee285dedc05a0dc4ff7fe96d
+    domain: climate
+    entity_id: 1955d16ca7175dcceffcd9855f6f3998
+    type: set_hvac_mode
+    hvac_mode: cool
+  mode: single
+- id: '1720877368650'
+  alias: suite-liga-luz-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 98
+      type: key_down
+  condition: []
+  action:
+  - type: turn_on
+    device_id: ed446a7160f6d69ccc11c6a786ae6b42
+    entity_id: 6b9bf890b4efcc3b27757b52cdb451b7
+    domain: switch
+  mode: single
+- id: '1720877545317'
+  alias: suite-desliga-luz-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 55
+      type: key_down
+  condition: []
+  action:
+  - type: turn_off
+    device_id: ed446a7160f6d69ccc11c6a786ae6b42
+    entity_id: 6b9bf890b4efcc3b27757b52cdb451b7
+    domain: switch
+  mode: single
+- id: '1720877709659'
+  alias: suite-persiana-abrir-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 96
+      type: key_down
+  condition: []
+  action:
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  mode: single
+- id: '1720877751935'
+  alias: suite-persiana-fecha-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 83
+      type: key_down
+  condition: []
+  action:
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  mode: single
+- id: '1720878227086'
+  alias: suite-rc-disney-plus-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 81
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: media_player.suite_chromecast
+      label_id: suite
+    data:
+      media_content_id: com.disney.disneyplus
+      media_content_type: app
+  mode: single
+- id: '1720878309316'
+  alias: suite-rc-youtube-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 71
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: media_player.suite_chromecast
+      label_id: suite
+    data:
+      media_content_id: com.google.android.youtube.tv
+      media_content_type: app
+  mode: single
+- id: '1720878373538'
+  alias: suite-rc-netflix-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 73
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: media_player.suite_chromecast
+      label_id: suite
+    data:
+      media_content_id: com.netflix.ninja
+      media_content_type: app
+  mode: single
+- id: '1720878417547'
+  alias: suite-rc-prime-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 79
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: media_player.suite_chromecast
+      label_id: suite
+    data:
+      media_content_type: app
+      media_content_id: com.amazon.amazonvideo.livingroom
+  mode: single
+- id: '1720878521041'
+  alias: suite-rc-home-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 82
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: remote.suite_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: HOME
+  mode: single
+- id: '1720878565310'
+  alias: suite-rc-down-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 80
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: remote.suite_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_DOWN
+  mode: single
+- id: '1720878652256'
+  alias: suite-rc-left-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 75
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: remote.suite_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_LEFT
+  mode: single
+- id: '1720878693581'
+  alias: suite-rc-right-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 77
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: remote.suite_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_RIGHT
+  mode: single
+- id: '1720878728796'
+  alias: suite-rc-up-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 72
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: remote.suite_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_UP
+  mode: single
+- id: '1720878934935'
+  alias: suite-rc-volume-down
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 74
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      device_id: 1b8aa1823a96d09a30b46103676cc31b
+      area_id: suite
+      entity_id: remote.suite_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      device: soundbar
+      command: volume_down
+  mode: single
+- id: '1720590905511017'
+  alias: quarto-liga-media-by-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 1
+      type: key_down
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 045289ead67888c6af945ef89dd4ce6d
+    entity_id: efc89ea2bd338c886a818fc7651f8672
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      device_id: 81ecf0212621166779c8898a779812f1
+      entity_id: remote.quarto_rc
+      label_id: quarto
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      device: quarto_tv
+      command: power_on
+  mode: single
+- id: '172059101185872'
+  alias: quarto-desliga-midia-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 15
+      type: key_down
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 045289ead67888c6af945ef89dd4ce6d
+    entity_id: efc89ea2bd338c886a818fc7651f8672
+    domain: switch
+  mode: single
+- id: '172066451109922'
+  alias: quarto-youtube-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 102
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      area_id: quarto
+      entity_id: media_player.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      media_content_id: com.google.android.youtube.tv
+      media_content_type: app
+  mode: single
+- id: '172074835996113'
+  alias: quarto-netflix-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 104
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      area_id: quarto
+      entity_id: media_player.quarto_chromecast
+      label_id: quarto
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      media_content_id: com.netflix.ninja
+      media_content_type: app
+  mode: single
+- id: '172074870114442'
+  alias: quarto-prime-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 107
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      area_id: quarto
+      entity_id: media_player.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      media_content_type: app
+      media_content_id: com.amazon.amazonvideo.livingroom
+  mode: single
+- id: '172074811775937'
+  alias: quarto-rc-disneyplus
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 109
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      area_id: quarto
+      entity_id: media_player.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      media_content_id: com.disney.disneyplus
+      media_content_type: app
+  mode: single
+- id: '172074942431151'
+  alias: quarto-up-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 103
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      entity_id: remote.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_UP
+  mode: single
+- id: '172074951941198'
+  alias: quarto-down-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 108
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+      entity_id: remote.quarto_chromecast
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_DOWN
+  mode: single
+- id: '172071149603418'
+  alias: quarto-left-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 105
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      entity_id: remote.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_LEFT
+  mode: single
+- id: '172074911723511'
+  alias: quarto-right-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 106
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      entity_id: remote.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_RIGHT
+  mode: single
+- id: '172011749993584'
+  alias: quarto-ok-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 76
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      entity_id: remote.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_CENTER
+  mode: single
+- id: '172075014321157'
+  alias: quarto-back-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 14
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      entity_id: remote.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: BACK
+  mode: single
+- id: '172075023651189'
+  alias: quarto-home-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 110
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      entity_id: remote.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: HOME
+  mode: single
+- id: '172075031184363'
+  alias: quarto-rc-volume-up
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 78
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      entity_id:
+      - remote.quarto_rc
+      device_id:
+      - 81ecf0212621166779c8898a779812f1
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: volume_up
+      device: quarto_tv
+  mode: single
+- id: '172087723611404'
+  alias: quarto-ac-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 13
+      type: key_down
+  condition: []
+  action:
+  - device_id: e696953f16879b9ffc6a52644806a13b
+    domain: climate
+    entity_id: c017e2bf3ae8bf64e8256f25503a3b92
+    type: set_hvac_mode
+    hvac_mode: cool
+  mode: single
+- id: '172087736811650'
+  alias: quarto-liga-luz-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 98
+      type: key_down
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 45b836acecc1713512b04d2e33f5410d
+    entity_id: c8bc090d34920d4f07edb2f6f1115e83
+    domain: switch
+  mode: single
+- id: '172087711545317'
+  alias: quarto-desliga-luz-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 55
+      type: key_down
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 45b836acecc1713512b04d2e33f5410d
+    entity_id: c8bc090d34920d4f07edb2f6f1115e83
+    domain: switch
+  mode: single
+- id: '172087770119659'
+  alias: quarto-persiana-abrir-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 96
+      type: key_down
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 6591cc5bf2b8bc2e8152958298c37c47
+    entity_id: 19a7bd2bfeb626330aed8c128d024627
+    domain: switch
+  mode: single
+- id: '172087117751935'
+  alias: quarto-persiana-fecha-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 111
+      type: key_down
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 6591cc5bf2b8bc2e8152958298c37c47
+    entity_id: 19a7bd2bfeb626330aed8c128d024627
+    domain: switch
+  mode: single
+- id: '172087811227086'
+  alias: quarto-rc-disney-plus-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 81
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      device_id:
+      - 72e65b3e4c1520f6a6ffca0bea503acb
+      area_id: quarto
+      entity_id: media_player.quarto_chromecast
+    data:
+      media_content_id: com.disney.disneyplus
+      media_content_type: app
+  mode: single
+- id: '172110878309316'
+  alias: quarto-rc-youtube-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 71
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      area_id: quarto
+      entity_id: media_player.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      media_content_id: com.google.android.youtube.tv
+      media_content_type: app
+  mode: single
+- id: '172087118373538'
+  alias: quarto-rc-netflix-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 73
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      area_id: quarto
+      entity_id: media_player.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      media_content_id: com.netflix.ninja
+      media_content_type: app
+  mode: single
+- id: '172087841751147'
+  alias: quarto-rc-prime-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 79
+      type: key_down
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      area_id: quarto
+      entity_id: media_player.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      media_content_type: app
+      media_content_id: com.amazon.amazonvideo.livingroom
+  mode: single
+- id: '172087852111041'
+  alias: quarto-rc-home-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 82
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      entity_id: remote.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: HOME
+  mode: single
+- id: '172087856531110'
+  alias: quarto-rc-down-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 80
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      entity_id: remote.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_DOWN
+  mode: single
+- id: '172087865225116'
+  alias: quarto-rc-left-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 75
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      entity_id: remote.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_LEFT
+  mode: single
+- id: '172087869358111'
+  alias: quarto-rc-right-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 77
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      entity_id: remote.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_RIGHT
+  mode: single
+- id: '172087872811796'
+  alias: quarto-rc-up-num-lock
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 72
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      entity_id: remote.quarto_chromecast
+      device_id: 72e65b3e4c1520f6a6ffca0bea503acb
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: DPAD_UP
+  mode: single
+- id: '172087893493115'
+  alias: quarto-rc-volume-down
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event9
+      key_code: 74
+      type: key_down
+  condition: []
+  action:
+  - service: remote.send_command
+    target:
+      area_id: quarto
+      device_id:
+      - 81ecf0212621166779c8898a779812f1
+      entity_id: remote.quarto_rc
+    data:
+      num_repeats: 1
+      delay_secs: 0.4
+      hold_secs: 0
+      command: volume_down
+      device: quarto_tv
+  mode: single
+- id: '1723163213021'
+  alias: suite-desliga-ar-rc
+  description: ''
+  trigger:
+  - platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      device_descriptor: /dev/input/event4
+      key_code: 96
+      type: key_down
+  condition: []
+  action:
+  - device_id: 30880941ee285dedc05a0dc4ff7fe96d
+    domain: climate
+    entity_id: 1955d16ca7175dcceffcd9855f6f3998
+    type: set_hvac_mode
+    hvac_mode: 'off'
+  mode: single

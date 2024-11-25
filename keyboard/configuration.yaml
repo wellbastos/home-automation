@@ -1,0 +1,105 @@
+keyboard_remote:
+  - device_descriptor: '/dev/input/by-id/usb-YICHIP_Wireless_Device-event-kbd'
+    type: "key_down"
+    emulate_key_hold: true
+    emulate_key_hold_delay: 0.25
+    emulate_key_hold_repeat: 2.0  
+  - device_descriptor: '/dev/input/event0'
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event1'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event2'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event3'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event4'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event5'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event6'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event7'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event8'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event9'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event10'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event11'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event12'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event13'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event14'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event15'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event16'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event17'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'      
+  - device_descriptor: '/dev/input/event18'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'
+  - device_descriptor: '/dev/input/event19'
+    emulate_key_hold: false
+    type:
+      - 'key_up'
+      - 'key_down'

@@ -1,0 +1,42 @@
+version: '3'
+services:
+# HOMEASSISTANT
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"    
+    volumes:
+      - /swarm/disks/hassio/config:/config
+      - /swarm/disks/hassio/media:/media
+      - /etc/localtime:/etc/localtime:ro
+      - /swarm/disks/hassio/ssh_config/ssh_config:/etc/ssh/ssh_config
+      - /run/dbus:/run/dbus:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /sys/class/hwmon/hwmon1/temp1_input:/sys/class/thermal/thermal_zone0/temp:ro
+      - /dev/input:/dev/input
+      - /dev/input/by-id/usb-YICHIP_Wireless_Device-event-kbd:/dev/input/by-id/usb-YICHIP_Wireless_Device-event-kbd
+    restart: unless-stopped      
+    device_cgroup_rules:
+      - 'c 13:* rmw'    
+    devices:
+       - "/dev/input/"   
+       - "/dev/input/by-id/usb-YICHIP_Wireless_Device-event-kbd"   
+    privileged: true
+    security_opt:
+      - apparmor=unconfined    
+    networks:
+      - hassio
+    ports:
+      - 8123:8123
+      - 1400:1400    
+    environment:
+      TZ: "${TZ}"
+    logging:
+      driver: json-file    
+    depends_on:
+      - postgres
+      - mosquitto 
+    dns:
+      - 192.168.1.1
+      - 1.1.1.1
