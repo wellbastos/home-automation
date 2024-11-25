@@ -1,0 +1,206 @@
+esphome:
+  name: esp-deck
+  friendly_name: esp-deck
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: epsdeck 
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "<YOUR-ESP-HOME-HOME-ASSISTANT-API-KEY>"
+
+ota:  
+  platform: esphome
+  password: "<YOUR-ESP-HOME-OTA>"
+  on_begin:
+    then:
+      - logger.log: "OTA start"
+  on_progress:
+    then:
+      - logger.log:
+          format: "OTA progress %0.1f%%"
+          args: ["x"]
+  on_end:
+    then:
+      - logger.log: "OTA end"
+  on_error:
+    then:
+      - logger.log:
+          format: "OTA update error %d"
+          args: ["x"]    
+
+wifi:
+  power_save_mode: LIGHT
+  fast_connect: true  
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  domain: .ariwell.lan    
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp-Deck Fallback Hotspot"
+    password: "<FALLBACK-HOTSPOT-WIFI-PASSWORD>"
+
+captive_portal:
+
+mqtt:
+  topic_prefix: espdeck
+  discovery: true
+  broker: !secret mqtt_host
+  port: !secret mqtt_port
+  username: !secret mqtt_user
+  password: !secret mqtt_password
+  discovery_prefix: homeassistant    
+
+sensor:
+  - platform: wifi_signal
+    name: "WiFi Signal"
+    update_interval: 360s
+
+# buttons
+binary_sensor:
+# colum 1 
+  - platform: gpio
+    id: btn_1
+    pin:
+      number: GPIO13
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "Button 1"
+    filters: 
+      - delayed_on: 1ms
+      - delayed_off: 10ms
+
+  - platform: gpio
+    id: btn_2
+    pin:
+      number: GPIO12
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "Button 2"
+    filters: 
+      - delayed_on: 1ms
+      - delayed_off: 10ms
+
+  - platform: gpio
+    id: btn_3
+    pin:
+      number: GPIO14
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "Button 3"
+    filters: 
+      - delayed_on: 1ms      
+      - delayed_off: 10ms      
+
+  - platform: gpio
+    id: btn_4
+    pin:
+      number: GPIO27
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "Button 4"
+    filters: 
+      - delayed_on: 1ms           
+      - delayed_off: 10ms      
+
+# colum 2
+  - platform: gpio
+    id: btn_5
+    pin:
+      number: GPIO26
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "Button 5"
+    filters: 
+      - delayed_on: 1ms    
+      - delayed_off: 10ms      
+
+  - platform: gpio
+    id: btn_6
+    pin:
+      number: GPIO25
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "Button 6"
+    filters: 
+      - delayed_on: 1ms          
+      - delayed_off: 10ms      
+
+  - platform: gpio
+    id: btn_7
+    pin:
+      number: GPIO33
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "Button 7"
+    filters: 
+      - delayed_on: 1ms    
+      - delayed_off: 10ms
+
+  - platform: gpio
+    id: btn_8
+    pin:
+      number: GPIO32
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "Button 8"
+    filters: 
+      - delayed_on: 1ms                
+      - delayed_off: 10ms      
+
+# colum 3
+  - platform: gpio
+    id: btn_9
+    pin:
+      number: GPIO23
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "Button 9"
+    filters: 
+      - delayed_on: 1ms    
+      - delayed_off: 10ms
+
+  - platform: gpio
+    id: btn_10
+    pin:
+      number: GPIO22
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "Button 10"
+    filters: 
+      - delayed_on: 1ms          
+      - delayed_off: 10ms      
+
+  - platform: gpio
+    id: btn_11
+    pin:
+      number: GPIO1
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "Button 11"
+    filters: 
+      - delayed_on: 1ms    
+      - delayed_off: 10ms
+      
+  - platform: gpio
+    id: btn_12
+    pin:
+      number: GPIO3
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "Button 12"
+    filters: 
+      - delayed_on: 1ms           
+      - delayed_off: 10ms
