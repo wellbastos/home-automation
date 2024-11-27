@@ -90,7 +90,7 @@ como podemos ver na automação abaixo:
 
 Agora é só aproveitar o brinquedo! rs
 
-Meu Setup destas configurações:
+No Meu Setup tem estes dispositivos:
 
 Suite:
 1. Google Chromecast com TV.
