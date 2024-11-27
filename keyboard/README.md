@@ -1,6 +1,8 @@
 # Controle remoto bluetooth para seus dispositivos
 
-https://www.youtube.com/watch?v=YEhD1XRVwC0&t=15s
+## Teclado para automações no Home Assistant
+
+[![Watch the video](https://img.youtube.com/vi/YEhD1XRVwC0/0.jpg)](https://www.youtube.com/watch?v=YEhD1XRVwC0)
 
 ## Pré-requisitos
 
