@@ -1,5 +1,7 @@
 # Controle remoto bluetooth para seus dispositivos
 
+https://www.youtube.com/watch?v=YEhD1XRVwC0&t=15s
+
 ## Pré-requisitos
 
 1. Ter o teclado númerico bluetooth, o teclado usado no setupo é este: https://www.kalunga.com.br/prod/teclado-numerico-sem-fio-preto-kw50-app-tech-pilha-alcalina-palito-aaa-duracell-cx-1-un/996966
