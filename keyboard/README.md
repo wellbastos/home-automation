@@ -112,3 +112,5 @@ Quarto:
 4. Switch Zigbee.
 5. Plafon Ekaza Dimerizavel Wifi.
 6. AC LG dual inverter voice.
+
+#homeassistant #hassio #home-assistant #home-automation
